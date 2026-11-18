@@ -1,0 +1,14 @@
+# Arquivos gerados pelo Kbuild
+*.o
+*.ko
+*.cmd
+*.mod
+*.mod.c
+*.d
+Module.symvers
+modules.order
+.tmp_versions/
+
+# Arquivos temporarios Zig
+.zig-cache/
+zig-cache/

@@ -76,7 +76,6 @@ static long zigcalc_ioctl(struct file *file,
 static const struct file_operations zigcalc_fops = {
     .owner = THIS_MODULE,
     .unlocked_ioctl = zigcalc_ioctl,
-    .llseek = no_llseek,
 };
 
 /* Registro do dispositivo de caractere */
