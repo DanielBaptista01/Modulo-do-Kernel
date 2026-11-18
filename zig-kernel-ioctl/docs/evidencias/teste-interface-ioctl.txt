@@ -1,0 +1,5 @@
+Tamanho da estrutura: 12 bytes
+Soma: 0xc00c5a01
+Subtracao: 0xc00c5a02
+Multiplicacao: 0xc00c5a03
+Divisao: 0xc00c5a04
