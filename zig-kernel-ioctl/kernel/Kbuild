@@ -1,0 +1,7 @@
+
+# Modulo carregavel do kernel Linux
+obj-m += zigcalc.o
+
+# Objetos que formam o modulo
+zigcalc-y := zigcalc_glue.o zigcalc_zig.o
+
