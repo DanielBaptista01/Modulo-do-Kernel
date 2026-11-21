@@ -12,3 +12,8 @@ modules.order
 # Arquivos temporarios Zig
 .zig-cache/
 zig-cache/
+
+# Arquivos intermediarios Zig e LLVM
+/kernel/zigcalc_zig.ll
+/kernel/zigcalc_zig_rethunk.ll
+/kernel/zigcalc_zig_raw.tmp

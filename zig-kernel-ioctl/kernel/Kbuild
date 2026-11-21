@@ -1,7 +1,31 @@
-
-# Modulo carregavel do kernel Linux
+# Modulo carregavel
 obj-m += zigcalc.o
-
-# Objetos que formam o modulo
 zigcalc-y := zigcalc_glue.o zigcalc_zig.o
 
+ZIG ?= zig
+LLC ?= llc
+ZIG_SRC ?= $(src)/zigcalc.zig
+
+quiet_cmd_zigobj = ZIG+LLVM $@
+cmd_zigobj = $(ZIG) build-obj $(ZIG_SRC) \
+-target x86_64-freestanding \
+-O ReleaseFast \
+-fllvm \
+-fno-PIC \
+-mno-red-zone \
+-fno-stack-protector \
+-fno-stack-check \
+-fno-unwind-tables \
+-fno-error-tracing \
+-fno-compiler-rt \
+-femit-llvm-ir=$(obj)/zigcalc_zig.ll \
+-femit-bin=$(obj)/zigcalc_zig_raw.tmp && \
+sed -E 's/^(attributes [^ ]+ = \{)/\1 fn_ret_thunk_extern /' \
+$(obj)/zigcalc_zig.ll > $(obj)/zigcalc_zig_rethunk.ll && \
+$(LLC) -filetype=obj -relocation-model=static \
+$(obj)/zigcalc_zig_rethunk.ll -o $@
+
+targets += zigcalc_zig.o
+
+$(obj)/zigcalc_zig.o: $(ZIG_SRC) FORCE
+	$(call if_changed,zigobj)
