@@ -17,3 +17,5 @@ zig-cache/
 /kernel/zigcalc_zig.ll
 /kernel/zigcalc_zig_rethunk.ll
 /kernel/zigcalc_zig_raw.tmp
+
+/zigcalc
