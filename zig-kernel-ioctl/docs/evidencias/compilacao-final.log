@@ -1,0 +1,16 @@
+make -C "/lib/modules/6.18.64-0-virt/build" M="/home/dBaptista/Modulo-do-Kernel-recuperado/zig-kernel-ioctl/kernel" ZIG="zig" LLC="llc" ZIG_SRC="/home/dBaptista/Modulo-do-Kernel-recuperado/zig-kernel-ioctl/kernel/zigcalc.zig" modules
+make[1]: Entering directory '/usr/src/linux-headers-6.18.64-0-virt'
+make[2]: Entering directory '/home/dBaptista/Modulo-do-Kernel-recuperado/zig-kernel-ioctl/kernel'
+  CC [M]  zigcalc_glue.o
+  ZIG+LLVM zigcalc_zig.o
+'-amx-transpose' is not a recognized feature for this target (ignoring feature)
+'-amx-transpose' is not a recognized feature for this target (ignoring feature)
+  LD [M]  zigcalc.o
+  MODPOST Module.symvers
+  CC [M]  zigcalc.mod.o
+  CC [M]  .module-common.o
+  LD [M]  zigcalc.ko
+  BTF [M] zigcalc.ko
+Skipping BTF generation for zigcalc.ko due to unavailability of vmlinux
+make[2]: Leaving directory '/home/dBaptista/Modulo-do-Kernel-recuperado/zig-kernel-ioctl/kernel'
+make[1]: Leaving directory '/usr/src/linux-headers-6.18.64-0-virt'

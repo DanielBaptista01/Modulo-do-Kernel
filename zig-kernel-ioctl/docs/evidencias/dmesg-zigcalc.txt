@@ -1,0 +1,6 @@
+[ 3167.088377] zigcalc: loading out-of-tree module taints kernel.
+[ 3167.088383] zigcalc: module verification failed: signature and/or required key missing - tainting kernel
+[ 3167.088505] zigcalc: modulo carregado
+[ 3184.872664] zigcalc: modulo descarregado
+[ 3561.931380] zigcalc: modulo carregado
+[ 3585.544569] zigcalc: modulo descarregado

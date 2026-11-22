@@ -1,0 +1,4 @@
+ioctl(3, _IOC(_IOC_READ|_IOC_WRITE, 0x5a, 0x1, 0xc), 0x7ffdcafd127c) = 0
+ioctl(1, TIOCGWINSZ, {ws_row=30, ws_col=119, ws_xpixel=640, ws_ypixel=480}) = 0
+close(3)                                = 0
++++ exited with 0 +++
