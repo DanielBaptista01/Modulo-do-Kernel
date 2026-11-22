@@ -120,3 +120,54 @@ Os registros estão disponíveis em docs/evidencias/.
 ## Documentação
 
 Relatório técnico: docs/relatorio.pdf
+
+## Preparação do ambiente Alpine Linux
+
+Este projeto foi desenvolvido em uma máquina virtual
+Alpine Linux 3.24, arquitetura x86_64.
+
+Instalar as ferramentas necessárias como root:
+
+    apk update
+    apk add build-base make llvm linux-virt-dev
+    apk add strace kmod git linux-headers
+
+O compilador Zig 0.16.0 deve ser instalado separadamente.
+
+Verificar as ferramentas:
+
+    zig version
+    gcc --version
+    llc --version
+    make --version
+
+Verificar o kernel e seus arquivos de desenvolvimento:
+
+    uname -r
+    ls -ld /lib/modules/$(uname -r)/build
+
+A versão dos headers deve corresponder ao kernel
+em execução. Na máquina utilizada, a versão validada foi:
+
+    6.18.64-0-virt
+
+Se houver incompatibilidade, alinhar os pacotes
+linux-virt e linux-virt-dev antes de compilar.
+
+A execução de módulos de kernel deve ocorrer
+exclusivamente em máquina virtual de testes,
+com snapshot e revisão de segurança prévios.
+
+## Investigação técnica
+
+O relatório apresenta a investigação da chamada
+de sistema ioctl, das estruturas file_operations,
+do registro miscdevice e dos mecanismos de
+transferência de memória entre usuário e kernel.
+
+O rastreamento completo da comunicação está em:
+
+    docs/evidencias/strace-completo.txt
+
+A atividade utiliza a syscall ioctl existente.
+Nenhuma nova chamada de sistema foi criada.
