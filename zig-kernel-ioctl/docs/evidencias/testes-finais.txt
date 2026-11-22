@@ -1,0 +1,17 @@
+=== Operacoes validas ===
+Resultado: 30
+Resultado: 35
+Resultado: 56
+Resultado: 25
+Resultado: -3
+=== Tratamento de erros ===
+Erro: divisao por zero
+Erro: overflow aritmetico
+Erro: overflow aritmetico
+Erro: overflow aritmetico
+Erro: overflow aritmetico
+Erro: comando desconhecido
+Erro: primeiro operando invalido
+=== Execucao simultanea ===
+Concorrencia: OK
+TODOS OS TESTES FUNCIONAIS PASSARAM
