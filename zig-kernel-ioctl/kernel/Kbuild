@@ -20,7 +20,7 @@ cmd_zigobj = $(ZIG) build-obj $(ZIG_SRC) \
 -fno-compiler-rt \
 -femit-llvm-ir=$(obj)/zigcalc_zig.ll \
 -femit-bin=$(obj)/zigcalc_zig_raw.tmp && \
-sed -E 's/^(attributes [^ ]+ = \{)/\1 fn_ret_thunk_extern /' \
+sed -E 's/^(attributes [^ ]+ = \{)/\1 fn_ret_thunk_extern "no-jump-tables"="true" /' \
 $(obj)/zigcalc_zig.ll > $(obj)/zigcalc_zig_rethunk.ll && \
 $(LLC) -filetype=obj -relocation-model=static \
 $(obj)/zigcalc_zig_rethunk.ll -o $@
